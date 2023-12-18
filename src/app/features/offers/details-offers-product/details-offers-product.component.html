@@ -1,0 +1,23 @@
+<section class="product__container">
+    <div class="product-image__container">
+        <img [src]="product?.image" alt="">
+    </div>
+    <div class="product-description__container">
+        <h2 class="product__name">{{ product?.description }}</h2>
+        <h3 class="product__price">{{ product?.price | currency}}</h3>
+        <div class="product__offers-price-container">
+          <p class="product__offers-price">{{product!.price * (1 - (product?.offers?.[0]?.discount ?? 0) / 100) | currency}}</p>
+          <span class="product__offers-discount">{{product?.offers?.[0]?.discount}}% off</span>
+        </div>
+        <p>Stock available:</p>
+        <label>
+          Quantity:
+          <input type="number" [(ngModel)]="quantity" min="1"> <!-- Two Way Data Binding-->
+              unit(s)
+        </label>
+        <p class="product__avaiability">
+          {{ product?.inventoryQuantity }} unit(s) in Stock
+        </p>
+        <button (click)="addToCart()">Add to cart</button>
+    </div>
+</section>

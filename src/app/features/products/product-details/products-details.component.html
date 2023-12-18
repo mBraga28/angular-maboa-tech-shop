@@ -1,0 +1,19 @@
+<section class="product__container">
+    <div class="product-image__container">
+        <img [src]="product?.image" alt="">
+    </div>
+    <div class="product-description__container">
+        <h2 class="product__name">{{ product?.description }}</h2>
+        <h3 class="product__price">{{ product?.price | currency }}</h3>
+        <p>Stock available:</p>
+        <label>
+            Quantity:
+            <input type="number" [(ngModel)]="quantity" min="1"> <!-- Two Way Data Binding-->
+            unit(s)
+        </label>
+        <p class="product__avaiability">
+            {{ product?.inventoryQuantity }} unit(s) in Stock
+        </p>
+        <button (click)="addToCart()">Add ao cart</button>
+    </div>
+</section>

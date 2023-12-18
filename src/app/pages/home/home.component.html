@@ -1,0 +1,27 @@
+<div class="home__container">
+    <h1>Check out our offers</h1>
+    <section class="offers">
+          <div  class="offers-list" *ngFor="let product of products">
+            <a routerLink='/offers/{{product.id}}' class="offers-list__link">
+              <img [src]="product.image">
+              <div class="offers-name__container">
+                <h3 class="offers-item__name">{{product.description}}</h3>
+              </div>
+              <div class="offers-price__container">
+                <div class="price-card">
+                  <div class="offers-item__price"><span class="normal-price">{{product.price | currency}}</span></div>
+                  <span class="offers-item__discount"> {{product.offers[0].discount}}%</span>
+                </div>
+                <p class="new-price">
+                  <span class="new-price__for">{{product.price - (product.price * (product.offers[0].discount / 100)) | currency}}</span>
+                </p>
+              </div>
+              <div class="offers-button__container">
+                <button class="offers-item__see-more-button" type="button">See More</button>
+              </div>
+            </a>
+          </div>
+  </section>
+
+  <a routerLink="/offers"><button class="btn-see-more" type="button">More Offers</button></a>
+</div>

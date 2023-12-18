@@ -1,0 +1,38 @@
+<header class="main-header">
+    <h1 class="main-header__title">
+      <a routerLink="">
+        <span class="main-header__title--white">MaboaTech</span>
+        <span class="main-header__title--yellow">Shop</span>
+      </a>
+    </h1>
+    <div class="container-menu" >
+        <nav class="main-header__menu">
+            <ul>
+                <li>
+                    <a routerLink="products">
+                      <i class="fa-solid fa-shop"></i>
+                       <b> Product </b>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="cart">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                       <b> Cart </b>
+                       <span class="badge-cart"> {{ cartService.getCart().length }} </span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="contact">
+                      <i class="fa-solid fa-phone"></i>
+                      <b> Contact </b>
+                    </a>
+                </li>
+                <li class="menu__social-media"><a><i class="fa-brands fa-facebook"></i></a></li>
+                <li class="menu__social-media"><a><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="menu__social-media"><a><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li class="menu__social-media"><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+        </nav>
+        <app-search-bar></app-search-bar>
+    </div>
+</header>
