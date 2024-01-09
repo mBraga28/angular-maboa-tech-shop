@@ -12,12 +12,14 @@
         <p>Stock available:</p>
         <label>
           Quantity:
-          <input type="number" [(ngModel)]="quantity" min="1"> <!-- Two Way Data Binding-->
+          <button class="remove-button" (click)="quantity > 1 ? quantity = quantity - 1 : null"><i class="fa-solid fa-minus"></i></button>
+          <input type="number" [(ngModel)]="quantity"  min="1">
+          <button class="add-button" (click)="quantity = quantity + 1"><i class="fa-solid fa-plus"></i></button>
               unit(s)
         </label>
         <p class="product__avaiability">
           {{ product?.inventoryQuantity }} unit(s) in Stock
         </p>
-        <button (click)="addToCart()">Add to cart</button>
+        <button class="add-to-cart" (click)="addToCart()">Add to cart</button>
     </div>
 </section>

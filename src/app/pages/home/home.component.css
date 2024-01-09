@@ -4,7 +4,7 @@
 }
 
 .offers {
-  padding: 40px 0;
+  padding: 40px;
   width: fit-content;
   display: flex;
   gap: 20px;
@@ -18,9 +18,12 @@
   padding: 10px;
   border-radius: 4px;
   flex: 0 1 270px;
-  height: 450px;
+  max-width: 270px;
   background-color: white;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .offers-list:hover {
@@ -39,8 +42,8 @@
 
 .offers-list img {
   position: relative;
-  height: 250px;
-  width: 250px;
+  max-height: 250px;
+  max-width: 250px;
   display: block;
   border-radius: 4px;
 }
@@ -54,7 +57,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
 }
 
 .offers-price__container {
@@ -64,7 +66,6 @@
 }
 
 .offers-item__discount {
-  width: 24px;
   height: 16px;
   padding: 2px;
 
@@ -88,7 +89,6 @@
 
 .offers-item__price {
   color: red;
-  text-decoration: line-through;
   font-size: 10px;
   font-weight: bold;
 
@@ -99,6 +99,7 @@
 .offers-item__price > span {
   font-size: 12px;
   color: red;
+  text-decoration: line-through;
 }
 
 .new-price {
@@ -112,7 +113,6 @@
   font-size: 32px;
   font-weight: bold;
 }
-
 .offers-item__see-more-button {
   background-color: var(--brown-tumbleweed);
   border: none;
@@ -145,7 +145,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .offers {
     flex-direction: column;
   }
@@ -157,5 +157,53 @@
   .offers-list img {
     width: 100%;
     height: auto;
+  }
+} */
+
+@media (max-width: 550px) {
+  .offers {
+    flex-flow: row wrap;
+    gap: 10px;
+  }
+
+  .offers-list {
+    flex-basis: calc(50% - 10px);
+  }
+}
+@media (max-width: 768px) {
+  .home__container {
+    padding: 35px 15px;
+  }
+
+  .offers {
+    flex-flow: row wrap;
+    padding: 10px 15px;
+  }
+
+  .offers-list {
+    flex-basis: calc(50% - 10px);
+    height: 247.2px;
+    width: 145.5px;
+  }
+
+  img {
+    width: 130.5px;
+    height: 130.5px;
+  }
+
+  .offers-item__name {
+    font-size: .9rem;
+  }
+
+  .offers-item__price > span {
+    font-size: .6rem;
+  }
+
+  .offers-item__discount{
+    font-size: .6rem;
+  }
+
+  .new-price__for {
+    font-size: 1rem;
   }
 }

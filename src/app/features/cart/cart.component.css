@@ -2,11 +2,25 @@
   padding: 20px;
 }
 
+.cart-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .cart-title {
     font-size: 44px;
     color: var(--metalic-bronze);
     font-weight: 700;
     padding: 8px 0;
+}
+
+.clean-button {
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--venetian-red);
 }
 
 li {
@@ -20,22 +34,63 @@ li {
     justify-content: space-between;
 }
 
+.item-description {
+  display: flex;
+  flex-direction: row;
+
+}
+
+li > div > .div__description {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+li > div > .div__description > p {
+  margin-left: 30px;
+}
+
+.product-description {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+li > div > .div__description > label {
+  margin-left: 30px;
+  margin-bottom: 12px;
+}
+
 img {
     width: 100px;
     height: 100px;
     display: block;
 }
 
-.remove-button {
-    background-color: red;
-    border: none;
-    color: white;
-    padding: 20px;
-    height: 100%;
-    transition: .2s all;
+.add-button {
+  color: var(--acadia);
+  background-color: transparent;
+  border: none;
+  transition: .2s all;
 }
 
-.remove-button:hover {
+.remove-button {
+  color: var(--acadia);
+  background-color: transparent;
+  border: none;
+  transition: .2s all;
+}
+
+.remove-id__button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 20px;
+  height: 100%;
+  transition: .2s all;
+}
+
+.remove-id__button:hover {
     filter: brightness(0.9);
 }
 
@@ -66,3 +121,65 @@ input {
     filter: brightness(0.9);
 }
 
+@media (max-width: 430px) {
+  /* li > div  {
+    display: flex;
+    flex-direction: row;
+  }
+
+  p {
+    margin-left: 0;
+  }
+
+  label {
+    margin-left: 30px;
+  } */
+}
+
+@media (max-width: 640px) {
+
+  li > div  {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li > div > .div__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  li > div > .div__description > p {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 0px;
+  }
+
+  li > div > .div__description > label {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 912px) {
+  .div__description {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+}
+@media (max-width: 1130px) {
+  /* .main-header__menu ul > li > a > b {
+    display: none;
+    justify-content: space-between;
+  }
+
+  .badge-cart {
+    margin-left: 15px;
+  } */
+
+  /* .main-header__menu {
+    visibility: hidden;
+  } */
+
+}

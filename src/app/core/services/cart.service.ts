@@ -14,17 +14,45 @@ export class CartService {
     return this.itens;
   }
   addToCart(product: IProductCart) {
-    this.itens.push(product);
+    const existingProduct = this.findProductInCartService(product.id);
+
+    if (existingProduct) {
+      existingProduct.quantity += product.quantity;
+    } else {
+      this.itens.push(product);
+    }
     localStorage.setItem("cart", JSON.stringify(this.itens));
   }
 
   removeProductCart(productId: number) {
-    this.itens = this.itens.filter(item => item.id !== productId);
+    const product = this.findProductInCartService(productId);
+
+    if (product) {
+      if (product.quantity > 1) {
+        product.quantity -= 1;
+        this.updateProductInCart(product);
+      } else {
+        this.itens = this.itens.filter(item => item.id !== productId);
+      }
+    }
     localStorage.setItem("cart", JSON.stringify(this.itens));
   }
 
   cleanCart() {
     this.itens = [];
     localStorage.clear();
+  }
+
+  findProductInCartService(productId: number): IProductCart | undefined {
+    return this.itens.find(item => item.id === productId);
+  }
+
+  updateProductInCart(product: IProductCart): void {
+    const index = this.itens.findIndex(item => item.id === product.id);
+
+    if (index !== -1) {
+      this.itens[index] = product;
+      localStorage.setItem("cart", JSON.stringify(this.itens));
+    }
   }
 }

@@ -116,9 +116,9 @@ export const products: IProduct[] = [
     {
       id: 8,
       description: "Graphics card combo",
-      price: 18449.99,
+      price: 1849.99,
       priceDescription: "PIX payment in full",
-      image: "./assets/placa-video.jpg",
+      image: "./assets/graphic-card.jpg",
       inventoryQuantity: 9,
       offers: [
         {
