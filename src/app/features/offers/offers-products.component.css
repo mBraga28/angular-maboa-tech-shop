@@ -43,7 +43,6 @@
 
 .offers-list img {
   position: relative;
-  max-height: 250px;
   max-width: 250px;
   display: block;
   border-radius: 4px;
@@ -53,11 +52,6 @@
   font-size: 18px;
   color: var(--brown-tumbleweed);
   margin-bottom: 0;
-
-  max-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 
 }
 
@@ -146,6 +140,7 @@
   cursor: pointer;
 }
 
+
 @media (max-width: 550px) {
   .offers {
     flex-flow: row wrap;
@@ -154,6 +149,13 @@
 
   .offers-list {
     flex-basis: calc(50% - 10px);
+  }
+
+  .offers-item__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 109.6px;
   }
 }
 @media (max-width: 768px) {
@@ -187,5 +189,12 @@
 
   .new-price__for {
     font-size: 1rem;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .offers-list img {
+    min-height: 250px;
   }
 }

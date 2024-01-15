@@ -10,7 +10,11 @@
              <img [src]="itemCart.image" />
              <div class="div__description">
                 <p class="product-description">{{ itemCart.description }}</p>
-                <p class="product-price">Price: {{ itemCart.price | currency}}</p>
+                <div class="price__container">
+                  <p class="old-product-price" *ngIf="itemCart?.offers?.[0]?.discount ?? 0 > 0; else oldProduct">{{ itemCart.price | currency}}</p>
+                  <ng-template #oldProduct><p class="product-price">Price: {{ itemCart.price | currency}}</p></ng-template>
+                  <p class="product-price-discount" *ngIf="itemCart?.offers?.[0]?.discount ?? 0 > 0">Price: {{ itemCart.price * (1 - (itemCart?.offers?.[0]?.discount ?? 0) / 100) | currency}}</p>
+                </div>
                 <label>
                     Quantity:
                     <button class="remove-button" (click)="removeProductCart(itemCart.id)"><i class="fa-solid fa-minus"></i></button>

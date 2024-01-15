@@ -39,7 +39,7 @@ export const products: IProduct[] = [
       offers: [
         {
           id: 1,
-          discount: 15,
+          discount: 0,
         },
       ],
     },
@@ -95,7 +95,7 @@ export const products: IProduct[] = [
       offers: [
         {
           id: 1,
-          discount: 10,
+          discount: 0,
         },
       ],
     },
@@ -109,7 +109,7 @@ export const products: IProduct[] = [
       offers: [
         {
           id: 1,
-          discount: 10,
+          discount: 0,
         },
       ],
     },
@@ -151,7 +151,7 @@ export const products: IProduct[] = [
       offers: [
         {
           id: 1,
-          discount: 10,
+          discount: 0,
         },
       ],
     },
@@ -179,7 +179,7 @@ export const products: IProduct[] = [
       offers: [
         {
           id: 1,
-          discount: 10,
+          discount: 0,
         },
       ],
     },
@@ -221,7 +221,7 @@ export const products: IProduct[] = [
       offers: [
         {
           id: 1,
-          discount: 10,
+          discount: 0,
         },
       ],
     },
@@ -235,7 +235,7 @@ export const products: IProduct[] = [
       offers: [
         {
           id: 1,
-          discount: 20,
+          discount: 0,
         },
       ],
     },
@@ -291,7 +291,7 @@ export const products: IProduct[] = [
       offers: [
         {
           id: 1,
-          discount: 10,
+          discount: 0,
         },
       ],
     },
@@ -305,7 +305,7 @@ export const products: IProduct[] = [
       offers: [
         {
           id: 1,
-          discount: 10,
+          discount: 0,
         },
       ],
     },

@@ -18,7 +18,7 @@ export class OffersProductsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const products = this.productsService.getAll();
+    const products = this.productsService.getAllOffers();
     this.route.queryParamMap.subscribe(params => {
       const description = params.get("description")?.toLowerCase();
 
@@ -30,5 +30,4 @@ export class OffersProductsComponent implements OnInit {
       this.products = products;
     })
   }
-
 }

@@ -27,7 +27,11 @@ export class CartComponent implements OnInit{
     // this.total = this.itensCart.reduce((prev, curr) => prev + (curr.price * curr.quantity), 0);
     this.total = 0;
     for (const item of this.itensCart) {
-      this.total += item.price * Math.max(0, item.quantity);
+      if (item.offers[0].discount > 0) {
+        this.total += (item.price* (1 - (item?.offers?.[0]?.discount)/ 100)) * Math.max(0, item.quantity);
+      } else {
+        this.total += item.price * Math.max(0, item.quantity);
+      }
     }
   }
 

@@ -13,6 +13,14 @@ export class ProductsService {
     return this.products;
   }
 
+  getAllOffers() {
+    return this.products?.filter((product) => product.offers && product.offers[0].discount > 0);
+  }
+
+  getAllNoOffers() {
+    return this.products?.filter((product) => product.offers && product.offers[0].discount < 10);
+  }
+
   getOne(productId: number) {
     return this.products.find(product => product.id === productId);
   }

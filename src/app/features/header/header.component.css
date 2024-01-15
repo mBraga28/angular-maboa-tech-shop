@@ -140,10 +140,9 @@
 }
 
 @media (max-width: 720px) {
-  .container-menu {
-    flex-direction: column;
+  .main-header__menu{
+    margin-right: 10px;
   }
-
 }
 
 @media (max-width: 820px) {

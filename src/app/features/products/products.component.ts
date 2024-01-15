@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const products = this.productsService.getAll();
+    const products = this.productsService.getAllNoOffers();
     this.route.queryParamMap.subscribe(params => {
       const description = params.get("description")?.toLowerCase();
 

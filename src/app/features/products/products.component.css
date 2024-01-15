@@ -17,8 +17,8 @@
     background-color: white;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .product-list__card:hover {
@@ -37,7 +37,6 @@
 
 .product-list__card img {
     position: relative;
-    max-height: 250px;
     max-width: 250px;
     display: block;
     border-radius: 4px;
@@ -119,4 +118,19 @@
   .product-item__price-description {
     font-size: 10px;
 }
+}
+
+@media (max-width: 550px) {
+  .product-item__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 109.6px;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-list__card img {
+    min-height: 250px;
+  }
 }

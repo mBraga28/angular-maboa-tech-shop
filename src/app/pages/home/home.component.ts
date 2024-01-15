@@ -17,6 +17,7 @@ export class HomeComponent {
     ngOnInit() {
         this.products = products
                         .filter((product) => product.offers?.length > 0);
+        this.products = this.products?.filter((product) => product.offers && product.offers[0].discount > 0);
         this.products = this.products?.filter((product) => product.offers?.length > 0)
                         ?.slice(0, this.limit);
     }
