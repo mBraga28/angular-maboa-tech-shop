@@ -147,10 +147,6 @@
     gap: 10px;
   }
 
-  .offers-list {
-    flex-basis: calc(50% - 10px);
-  }
-
   .offers-item__name {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -162,6 +158,7 @@
   .offers {
     flex-flow: row wrap;
     padding: 40px 15px;
+    width: 90%;
   }
 
   .offers-list {

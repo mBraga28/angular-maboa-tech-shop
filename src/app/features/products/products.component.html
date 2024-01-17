@@ -1,17 +1,35 @@
 <section class="product-list">
     <div class="product-list__card" *ngFor="let product of products">
-        <a routerLink='/products/{{product.id}}' class="product-list__link">
-            <img [src]="product.image">
-            <h2 class="product-item__name">
-                {{ product.description }}
-            </h2>
-            <p class="product-item__price">
-                {{ product.price | currency}} <!-- pipe de currency para colocar o $ no preço-->
+        <a routerLink='/products/{{product.id}}' class="product-list__link"  *ngIf="product?.offers?.[0]?.discount ?? 0 > 0; else offerProduct">
+          <img [src]="product.image">
+
+          <div class="offers-name__container">
+            <h3 class="offers-item__name">{{product.description}}</h3>
+          </div>
+
+          <div class="offers-price__container">
+            <div class="price-card">
+              <div class="offers-item__price"><span class="normal-price">{{product.price | currency}}</span></div>
+              <span class="offers-item__discount"> {{product.offers[0].discount}}%</span>
+            </div>
+            <p class="new-price">
+              <span class="new-price__for">{{product.price - (product.price * (product.offers[0].discount / 100)) | currency}}</span>
             </p>
-            <p class="product-item__price-description">
-                {{ product.priceDescription }}
-            </p>
-            <!-- <button class="product-item__buy-button" type="button">Buy</button> -->
-        </a>
+          </div>
+          </a>
+          <ng-template #offerProduct>
+            <a routerLink='/products/{{product.id}}' class="product-list__link">
+              <img [src]="product.image">
+              <h2 class="product-item__name">
+                  {{ product.description }}
+              </h2>
+              <p class="product-item__price">
+                  {{ product.price | currency}} <!-- pipe de currency para colocar o $ no preço-->
+              </p>
+              <p class="product-item__price-description">
+                  {{ product.priceDescription }}
+              </p>
+            </a>
+          </ng-template>
     </div>
 </section>

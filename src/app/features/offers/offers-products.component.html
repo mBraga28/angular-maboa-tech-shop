@@ -9,7 +9,9 @@
 
         <div class="offers-price__container">
           <div class="price-card">
-            <div class="offers-item__price"><span class="normal-price">{{product.price | currency}}</span></div>
+            <div class="offers-item__price">
+              <span class="normal-price">{{product.price | currency}}</span>
+            </div>
             <span class="offers-item__discount"> {{product.offers[0].discount}}%</span>
           </div>
           <p class="new-price">

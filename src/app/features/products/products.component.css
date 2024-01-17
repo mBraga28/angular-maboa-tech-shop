@@ -42,15 +42,73 @@
     border-radius: 4px;
 }
 
+.offers-item__name {
+  font-size: 18px;
+  color: var(--brown-tumbleweed);
+  margin-bottom: 0;
+
+}
+
+.offers-price__container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.offers-item__discount {
+  height: 16px;
+  padding: 2px;
+
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: right;
+
+  color: var(--metalic-bronze);
+  background-color: var(--peridot);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.price-card {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.offers-item__price {
+  color: red;
+  font-size: 10px;
+  font-weight: bold;
+
+  margin-right: 10px;
+  justify-content: space-evenly;
+}
+
+.offers-item__price > span {
+  font-size: 12px;
+  color: red;
+  text-decoration: line-through;
+}
+
+.new-price {
+  color: var(--metalic-bronze);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.new-price__for {
+  color: var(--peridot);
+  font-size: 32px;
+  font-weight: bold;
+}
+
 .product-item__name {
-    font-size: 24px;
+    font-size: 18px;
     color: var(--brown-tumbleweed);
     margin-bottom: 0;
-
-    max-width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-weight: 400;
 }
 
 .product-item__price {
@@ -84,8 +142,18 @@
     gap: 10px;
   }
 
-  .product-list__card {
-    flex-basis: calc(50% - 10px);
+  .offers-item__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 109.6px;
+  }
+
+  .product-item__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 109.6px;
   }
 }
 
@@ -93,6 +161,7 @@
   .product-list {
     flex-flow: row wrap;
     padding: 40px 15px;
+    width: 90%;
   }
 
   .product-list__card {
@@ -106,6 +175,22 @@
     height: 155px;
   }
 
+  .offers-item__name {
+    font-size: .9rem;
+  }
+
+  .offers-item__price > span {
+    font-size: .6rem;
+  }
+
+  .offers-item__discount{
+    font-size: .6rem;
+  }
+
+  .new-price__for {
+    font-size: 1rem;
+  }
+
   .product-item__name {
     font-size: .9rem;
   }
@@ -117,15 +202,6 @@
 
   .product-item__price-description {
     font-size: 10px;
-}
-}
-
-@media (max-width: 550px) {
-  .product-item__name {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 109.6px;
   }
 }
 

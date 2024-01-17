@@ -76,7 +76,7 @@ export class CartComponent implements OnInit{
     const index = this.itensCart.findIndex(item => item.id === productId);
     if (index !== -1) {
       this.itensCart.splice(index, 1);
-      this.cartService.removeProductCart(productId);
+      this.cartService.removeIdProductCart(productId);
       this.calculateTotal();
     }
   }

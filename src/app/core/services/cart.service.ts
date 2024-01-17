@@ -37,6 +37,15 @@ export class CartService {
     }
     localStorage.setItem("cart", JSON.stringify(this.itens));
   }
+  removeIdProductCart(productId: number) {
+    const product = this.findProductInCartService(productId);
+
+    if (product) {
+      this.itens = this.itens.filter(item => item.id !== productId);
+      localStorage.setItem("cart", JSON.stringify(this.itens));
+    }
+  }
+
 
   cleanCart() {
     this.itens = [];
