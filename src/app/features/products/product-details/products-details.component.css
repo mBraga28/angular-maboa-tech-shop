@@ -17,7 +17,7 @@
     font-size: 36px;
 }
 
-.product__offers-price-container {
+.product__price-container {
   display: flex;
   flex-direction: grid row;
 }
