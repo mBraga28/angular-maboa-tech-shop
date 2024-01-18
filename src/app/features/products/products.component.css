@@ -46,7 +46,10 @@
   font-size: 18px;
   color: var(--brown-tumbleweed);
   margin-bottom: 0;
-
+  max-width: 219px;
+  overflow: hidden;
+  white-space: nowwrap;
+  text-overflow: ellipsis;
 }
 
 .offers-price__container {
