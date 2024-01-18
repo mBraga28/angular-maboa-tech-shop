@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../core/services/cart.service';
 import { Router } from '@angular/router';
 import { IProductCart } from 'src/app/core/interfaces/products';
+import { ProductsService } from 'src/app/core/services/products.service';
 
 @Component({
   selector: 'app-cart',
@@ -15,6 +16,7 @@ export class CartComponent implements OnInit{
 
   constructor(
     public cartService: CartService,
+    private productsService: ProductsService,
     private router: Router
   ) {}
 
@@ -90,6 +92,9 @@ export class CartComponent implements OnInit{
   buy() {
     alert("Congratulations, you have completed your purchase!");
     this.cartService.cleanCart();
+    this.itensCart.forEach(item => {
+      this.productsService.updateInventoryQuantity((item.inventoryQuantity - item.quantity), item!.id);
+    })
     this.router.navigate([""]);
   }
 

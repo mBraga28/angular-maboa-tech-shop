@@ -35,5 +35,4 @@ export class DetailsProductComponent implements OnInit {
     };
     this.cartService.addToCart(product);
   }
-
 }
